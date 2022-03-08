@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between">
+  <div class="d-flex">
+    <img [src]="urlImage" alt="avatar" />
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-row">
+        <div *ngFor="let poqueType of poquemon.types" class="ms-2">
+          <span class="badge rounded-pill bg-secondary">{{
+            poqueType.type.name
+          }}</span>
+        </div>
+      </div>
+      <p class="ms-2 mt-2">{{ poquemon.weight }} kg</p>
+    </div>
+  </div>
+</div>

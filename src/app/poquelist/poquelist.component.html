@@ -1,0 +1,28 @@
+<header>
+  <div class="hader__left d-flex flex-row align-items-center">
+    <img
+      src="https://images.gameinfo.io/pokemon/256/p143f157.png"
+      alt=""
+      height="48px"
+    />
+    <span class="header__title">Pokeapp</span>
+  </div>
+</header>
+<input
+  class="finder__input"
+  type="text"
+  placeholder="Buscar"
+  [(ngModel)]="searchTerm"
+/>
+<div class="content d-flex flex-wrap">
+  <div
+    *ngFor="let poquemon of poquemons | filter: searchTerm"
+    class="content__card"
+    (click)="openCard(poquemon)"
+  >
+    {{ poquemon.name }}
+  </div>
+</div>
+<div *ngIf="(poquemons | filter: searchTerm).length == 0">
+  <h2>No hay Pokemons con ese nombre</h2>
+</div>
